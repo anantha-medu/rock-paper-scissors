@@ -23,14 +23,16 @@ function getComputerChoice()
 
 function playerSelection()
 {
-    let playerChoice = prompt("What is your choice?");
-    playerChoice = playerChoice.toLowerCase;
+    let playerChoicePrompt = prompt("What is your choice?");
+    let playerChoice = playerChoicePrompt.toLowerCase();
 
-    if(playerChoice==="rock")
+    while((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors"))
     {
-        return 
+        playerChoicePrompt = prompt("Enter Valid Choice");
+        playerChoice = playerChoicePrompt.toLowerCase();
     }
+
+    return playerChoice;
+
 }
 
-// let computerChoice = getComputerChoice();
-// console.log(computerChoice);
