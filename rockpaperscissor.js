@@ -1,22 +1,36 @@
 function getComputerChoice()
 {
     let computerNumber = Math.floor(Math.random()*3 +1);
-    
+    let computerChoice;
+
     switch(computerNumber)
     {
         case 1:
-            return 'rock';
+            computerChoice = "rock";
             break;
         
         case 2:
-            return 'paper';
+            computerChoice = "paper";
             break;
 
         case 3:
-            return 'scissors';
+            computerChoice = "scissors";
             break;
+    }
+
+    return computerChoice;
+}
+
+function playerSelection()
+{
+    let playerChoice = prompt("What is your choice?");
+    playerChoice = playerChoice.toLowerCase;
+
+    if(playerChoice==="rock")
+    {
+        return 
     }
 }
 
-//let computerChoice = getComputerChoice();
-//console.log(computerChoice);
+// let computerChoice = getComputerChoice();
+// console.log(computerChoice);
