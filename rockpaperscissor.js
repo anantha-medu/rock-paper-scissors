@@ -1,3 +1,4 @@
+//Function to generate COmputer's choice
 function getComputerChoice()
 {
     let computerNumber = Math.floor(Math.random()*3 +1);
@@ -21,6 +22,7 @@ function getComputerChoice()
     return computerChoice;
 }
 
+//Function to get player's selection
 function playerSelection()
 {
     let playerChoicePrompt = prompt("What is your choice?");
@@ -36,3 +38,29 @@ function playerSelection()
 
 }
 
+
+//Function to play a round of the game
+function playRound()
+{
+    let computerChoice = getComputerChoice();
+    let playerChoice = playerSelection();
+    console.log(computerChoice);
+    console.log(playerChoice);
+
+    if(computerChoice === playerChoice)
+    {
+        console.log("It's a draw");
+    }
+
+    else if((computerChoice==="rock" && playerChoice==="scissors") || (computerChoice==="paper" && playerChoice==="rock") ||  (computerChoice==="scissors" && playerChoice==="paper"))
+    {
+        console.log("You lose the round! Computer wins!");
+    }
+
+    else
+    {
+        console.log("You win the round!");
+    }
+}
+
+playRound();
