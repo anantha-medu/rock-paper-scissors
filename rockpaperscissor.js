@@ -42,25 +42,69 @@ function playerSelection()
 //Function to play a round of the game
 function playRound()
 {
-    let computerChoice = getComputerChoice();
-    let playerChoice = playerSelection();
-    console.log(computerChoice);
-    console.log(playerChoice);
+    const computerChoice = getComputerChoice();
+    const playerChoice = playerSelection();
+    let result;
+    // console.log(computerChoice);
+    // console.log(playerChoice);
 
     if(computerChoice === playerChoice)
     {
         console.log("It's a draw");
+        return result = "Draw";
     }
 
     else if((computerChoice==="rock" && playerChoice==="scissors") || (computerChoice==="paper" && playerChoice==="rock") ||  (computerChoice==="scissors" && playerChoice==="paper"))
     {
         console.log("You lose the round! Computer wins!");
+        return result = "Lose";
     }
 
     else
     {
         console.log("You win the round!");
+        return result = "Win";
     }
 }
 
-playRound();
+//Function to play 5 rounds of game
+function game()
+{
+    let playerScore = 0, computerScore = 0;
+
+    for(let i=0; i<5; i++)
+    {
+        console.log("Round "+ (i+1));
+        let roundResult = playRound();
+        switch(roundResult)
+        {
+            case "Win":
+                playerScore+=1;
+                continue;
+            
+            case "Lose":
+                computerScore+=1;
+                continue;
+
+            case "Draw":
+                continue;
+        }
+    }
+
+    if(playerScore>computerScore)
+    {
+        alert("You win the game!");
+    }
+
+    else if(computerScore===playerScore)
+    {
+        alert("You drew the game!");
+    }
+
+    else
+    {
+        alert("You lost the game!");
+    }
+}
+
+game();
