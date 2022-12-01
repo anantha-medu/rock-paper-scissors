@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="rockpaperscissor.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <script src="rockpaperscissor.js"></script>
+    <div class="head">
+        <h1>ROCK PAPER AND SCISSORS</h1>
+        <h2>THE GAME</h2>
+    </div>
+
+    <div class ="section" id="player-section">
+        <div id="choices">
+            <ul class="options" id="player-selections">
+                <li><img src="img/rock.png"></li>
+                <li><img src="img/paper.png"></li>
+                <li><img src="img/scissors.png"></li>
+            </ul>
+        </div>
+        <div class="score section">
+            <div><h3>PLAYER <br> SCORE </h3></div>
+            <div><p id="player-score">0</p></div>
+        </div>
+        <div class="selection">
+            <img src="img/question-mark.png" id="player-choice">
+        </div>
+    </div>
+
+    <div class ="section" id="comp-section" >
+        <div class="selection">
+            <img src="img/question-mark.png" id="comp-choice">
+        </div>
+
+        <div class="score section">
+            <div><h3>COMPUTER <br> SCORE </h3></div>
+            <div><p id="comp-score">0</p></div>
+        </div>
+
+        <div id="choices">
+            <ul class="options" id="comp-selections">
+                <li><img src="img/rock.png"></li>
+                <li><img src="img/paper.png"></li>
+                <li><img src="img/scissors.png"></li>
+            </ul>
+        </div>
+
+    </div>
+
 </body>
 </html>
