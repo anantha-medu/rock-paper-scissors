@@ -173,5 +173,45 @@ playRoundButton.addEventListener("click", playRound);
 
 function getPlayerChoice()
 {
+    const playerChoice = document.getElementById("player-choice");
+    if(playerChoice.getAttribute("data-choice") === null)
+    {
+        alert("Select a choice from the available options!!!");
+        return;
+    }
 
+    else
+    {
+        return playerChoice.getAttribute("data-choice");
+    }
+
+}
+
+
+//Function to play a round of the game
+function playRound()
+{
+    const computerChoice = getComputerChoice();
+    const playerChoice = getPlayerChoice();
+    let result;
+    // console.log(computerChoice);
+    // console.log(playerChoice);
+
+    if(computerChoice === playerChoice)
+    {
+        console.log("It's a draw");
+        return result = "Draw";
+    }
+
+    else if((computerChoice==="rock" && playerChoice==="scissors") || (computerChoice==="paper" && playerChoice==="rock") ||  (computerChoice==="scissors" && playerChoice==="paper"))
+    {
+        console.log("You lose the round! Computer wins!");
+        return result = "Lose";
+    }
+
+    else
+    {
+        console.log("You win the round!");
+        return result = "Win";
+    }
 }
