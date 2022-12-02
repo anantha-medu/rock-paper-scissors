@@ -109,6 +109,9 @@
 
 // game();
 
+
+//UI related
+
 const choiceSelection = Array.from(document.querySelectorAll('#player-selections .options'));
 choiceSelection.forEach(choice => choice.addEventListener("click", selectionDisplay));
 
@@ -133,3 +136,42 @@ let deEnlarge = (e) => e.target.parentElement.classList.remove('enlarge');
 choiceSelection.forEach(choice => choice.addEventListener("mouseover", enlarge));
 
 choiceSelection.forEach(choice => choice.addEventListener("mouseout", deEnlarge));
+
+
+// Game  logic related
+
+// to get computer's choice and display it
+function getComputerChoice()
+{
+    let computerNumber = Math.floor(Math.random()*3 +1);
+    let computerChoice;
+
+    switch(computerNumber)
+    {
+        case 1:
+            computerChoice = "rock";
+            document.getElementById("comp-choice").src="img/rock.png";
+            break;
+        
+        case 2:
+            computerChoice = "paper";
+            document.getElementById("comp-choice").src="img/paper.png";
+            break;
+
+        case 3:
+            computerChoice = "scissors";
+            document.getElementById("comp-choice").src="img/scissors.png";
+            break;
+    }
+
+    return computerChoice;
+}
+
+const playRoundButton = document.getElementById('play-round-btn');
+
+playRoundButton.addEventListener("click", playRound);
+
+function getPlayerChoice()
+{
+
+}
