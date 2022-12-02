@@ -199,6 +199,7 @@ button
 
 .enlarge
 {
-    
+    transform: scale(1.3);
+    box-shadow: #0096FF 0px 2px 4px 0px, #0096FF 0px 2px 16px 0px;
 }
 

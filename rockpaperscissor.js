@@ -123,7 +123,13 @@ function selectionDisplay(e)
     }
 }
 
-let enlarge = (e) => e.target.classList.add('enlarge');
+let enlarge = (e) => {
+    // e.target.classList.add('enlarge');
+    e.target.parentElement.classList.add('enlarge');
+}
+
+let deEnlarge = (e) => e.target.parentElement.classList.remove('enlarge');
 
 choiceSelection.forEach(choice => choice.addEventListener("mouseover", enlarge));
 
+choiceSelection.forEach(choice => choice.addEventListener("mouseout", deEnlarge));
