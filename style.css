@@ -1,0 +1,157 @@
+body
+{
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+
+/* Head Section */
+
+.head h1
+{
+    font-size: 40px;
+    margin-bottom: 13px;
+    font-family: 'Nova Flat';
+    color: #f8e9a1
+} 
+
+.head h2
+{
+    font-size: 30px;
+    margin-top: 9px;
+    font-family: 'Nova Flat';
+    color:#a8d0e6
+}
+
+.head
+{
+    background-color: #374785;
+}
+
+
+/* Body Section*/
+
+.body-center
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: #24305e;
+}
+
+.section
+{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0;
+}
+
+#player-section, #comp-section
+{
+    width: 50%;
+    margin: 10px 50px;
+}
+
+.options
+{
+    width: 100px;
+    height: auto;
+}
+
+/* div
+{
+    border: 1px black solid;
+} */
+
+#player-choice, #comp-choice
+{
+    width:300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.score-section
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /* border: 2px black solid; */
+    /* border-radius: 10px; */
+    height: 146px;
+    width: 175px;
+    background-color: #f76c6c;
+    /* box-shadow: #36454F 0px 8px 24px; */
+    box-shadow: #36454F 0px 5px 15px;
+}
+
+.selection
+{
+    align-self: center;
+    /* border-radius: 25px; */
+    overflow: hidden;
+    height: 300px;
+    margin: 0 15px;
+    border: 2px #24305e solid ;
+    box-shadow: #A8D0E6 0px 7px 14px, rgba(0, 0, 0, 0.22) 0px 5px 5px;
+}
+
+h1,h2, h3, p
+{
+    text-align: center;
+    font-family: 'Allerta Stencil';
+}
+
+li
+{
+    border: 1px black solid;
+    border-radius: 75px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    object-fit: cover;
+    height: 100px;
+}
+
+
+#player-score, #comp-score
+{
+    font-size: 50px;
+    color: aliceblue;
+    margin: 0;
+}
+
+.score-section h3
+{
+    margin: 12px 0 0 0;
+    font-size: 24px;
+    color:#a8d0e6;
+    text-shadow: 2px 2px #36454F;
+}
+
+#vs
+{
+    align-self: center;
+    color: aliceblue;
+}
+
+/* RESULT SECTION */
+
+/* .result-section
+{
+    background-color: #24305e;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons
+{
+    display: flex;
+}
+ */

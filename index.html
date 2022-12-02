@@ -4,52 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="rockpaperscissor.js" defer></script>
+    <!-- <script src="rockpaperscissor.js" defer></script> -->
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
     <title>Document</title>
 </head>
 <body>
     <div class="head">
         <h1>ROCK PAPER AND SCISSORS</h1>
-        <h2>THE GAME</h2>
+        <h2>---- THE GAME ----</h2>
     </div>
 
-    <div class ="section" id="player-section">
-        <div id="choices">
-            <ul class="options" id="player-selections">
-                <li><img src="img/rock.png"></li>
-                <li><img src="img/paper.png"></li>
-                <li><img src="img/scissors.png"></li>
-            </ul>
+    <div class="body-center">
+        <div class ="section" id="player-section">
+            <div id="choices">
+                <ul id="player-selections">
+                    <li><img src="img/rock.png" class="options"></li>
+                    <li><img src="img/paper.png" class="options"></li>
+                    <li><img src="img/scissors.png" class="options"></li>
+                </ul>
+            </div>
+            <div class="score-section">
+                <div><h3>PLAYER<br>SCORE </h3></div>
+                <div><p id="player-score">0</p></div>
+            </div>
+            <div class="selection">
+                <img src="img/question-mark.png" id="player-choice">
+            </div>
         </div>
-        <div class="score section">
-            <div><h3>PLAYER <br> SCORE </h3></div>
-            <div><p id="player-score">0</p></div>
-        </div>
-        <div class="selection">
-            <img src="img/question-mark.png" id="player-choice">
+
+        <div id="vs"><h2>VS</h2></div>
+
+        <div class ="section" id="comp-section" >
+            <div class="selection">
+                <img src="img/question-mark.png" id="comp-choice">
+            </div>
+
+            <div class="score-section">
+                <div><h3>COMPUTER<br>SCORE</h3></div>
+                <div><p id="comp-score">0</p></div>
+            </div>
+
+            <div id="choices">
+                <ul id="comp-selections">
+                    <li><img src="img/rock.png" class="options"></li>
+                    <li><img src="img/paper.png" class="options"></li>
+                    <li><img src="img/scissors.png" class="options"></li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
-    <div class ="section" id="comp-section" >
-        <div class="selection">
-            <img src="img/question-mark.png" id="comp-choice">
+    <!-- <div class = "result-section">
+        <div class="buttons">
+            <button type="button">PLAY ROUND</button>
+            <button type="button">RESTART</button>
         </div>
-
-        <div class="score section">
-            <div><h3>COMPUTER <br> SCORE </h3></div>
-            <div><p id="comp-score">0</p></div>
-        </div>
-
-        <div id="choices">
-            <ul class="options" id="comp-selections">
-                <li><img src="img/rock.png"></li>
-                <li><img src="img/paper.png"></li>
-                <li><img src="img/scissors.png"></li>
-            </ul>
-        </div>
-
-    </div>
+        <div><h2>ROUND RESULT</h2></div>
+        <div><p id="result-text">---</p></div>
+    </div> -->
 
 </body>
 </html>
