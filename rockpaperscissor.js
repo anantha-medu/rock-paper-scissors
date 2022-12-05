@@ -112,20 +112,29 @@
 
 //UI related
 
+//to display the player's choice when clicked on either of choice images
 const choiceSelection = Array.from(document.querySelectorAll('#player-selections .options'));
 choiceSelection.forEach(choice => choice.addEventListener("click", selectionDisplay));
+const playerChoice = document.getElementById("player-choice");
+const compChoiceDisplay = document.getElementById("comp-choice");
 
 function selectionDisplay(e)
 {
     const choiceId = e.target.id;
-    const playerChoice = document.getElementById("player-choice");
+    
     if(playerChoice.src="img/question-mark.png")
     {
         playerChoice.src=e.target.src;
         playerChoice.setAttribute("data-choice", choiceId);
+        compChoiceDisplay.src = "img/question-mark.png";
     }
+
+    playerChoice.parentElement.classList.remove('winner', 'loser');
+    compChoiceDisplay.parentElement.classList.remove('winner', 'loser');
+    
 }
 
+// To enlarge the choice images when hovered over
 let enlarge = (e) => {
     // e.target.classList.add('enlarge');
     e.target.parentElement.classList.add('enlarge');
@@ -136,6 +145,27 @@ let deEnlarge = (e) => e.target.parentElement.classList.remove('enlarge');
 choiceSelection.forEach(choice => choice.addEventListener("mouseover", enlarge));
 
 choiceSelection.forEach(choice => choice.addEventListener("mouseout", deEnlarge));
+
+
+
+// to display the score
+const playerScoreDisplay = document.querySelector('#player-score');
+const compScoreDisplay = document.querySelector('#comp-score');
+
+let playerScore = 0;
+let compScore = 0;
+
+playerScoreDisplay.textContent = playerScore;
+compScoreDisplay.textContent = compScore;
+
+// to display winner and loser color after each round
+
+let showResultColor = (winner, loser) =>
+{
+    winner.parentElement.classList.toggle('winner');
+    loser.parentElement.classList.toggle('loser');
+}
+
 
 
 // Game  logic related
@@ -150,17 +180,17 @@ function getComputerChoice()
     {
         case 1:
             computerChoice = "rock";
-            document.getElementById("comp-choice").src="img/rock.png";
+            compChoiceDisplay.src="img/rock.png";
             break;
         
         case 2:
             computerChoice = "paper";
-            document.getElementById("comp-choice").src="img/paper.png";
+            compChoiceDisplay.src="img/paper.png";
             break;
 
         case 3:
             computerChoice = "scissors";
-            document.getElementById("comp-choice").src="img/scissors.png";
+            compChoiceDisplay.src="img/scissors.png";
             break;
     }
 
@@ -189,29 +219,51 @@ function getPlayerChoice()
 
 
 //Function to play a round of the game
+
 function playRound()
 {
     const computerChoice = getComputerChoice();
-    const playerChoice = getPlayerChoice();
+    const playerSelection = getPlayerChoice();
     let result;
     // console.log(computerChoice);
     // console.log(playerChoice);
+    const resultDisplay = document.querySelector('#result-display');
 
-    if(computerChoice === playerChoice)
+    if(computerChoice === playerSelection)
     {
-        console.log("It's a draw");
+        // console.log("It's a draw");
+        resultDisplay.innerHTML = "It's a draw";
         return result = "Draw";
     }
 
-    else if((computerChoice==="rock" && playerChoice==="scissors") || (computerChoice==="paper" && playerChoice==="rock") ||  (computerChoice==="scissors" && playerChoice==="paper"))
+    else if((computerChoice==="rock" && playerSelection==="scissors") || (computerChoice==="paper" && playerSelection==="rock") ||  (computerChoice==="scissors" && playerSelection==="paper"))
     {
-        console.log("You lose the round! Computer wins!");
+        // console.log("You lose the round! Computer wins!");
+        resultDisplay.innerHTML = "You lose the round! Computer wins!";
+        showResultColor(compChoiceDisplay, playerChoice);
         return result = "Lose";
     }
 
     else
     {
-        console.log("You win the round!");
+        // console.log("You win the round!");
+        resultDisplay.innerHTML = "You win the round!";
+        showResultColor(playerChoice, compChoiceDisplay);
         return result = "Win";
+    }
+}
+
+// to Update player score after each round
+
+function updateScore(text)
+{
+    if(text === 'Win')
+    {
+        playerScore += 1;
+    }
+
+    else if(text === 'Lose')
+    {
+        compScore += 1;
     }
 }

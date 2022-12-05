@@ -203,3 +203,14 @@ button
     box-shadow: #0096FF 0px 2px 4px 0px, #0096FF 0px 2px 16px 0px;
 }
 
+.winner
+{
+    /* box-shadow: #50C878 0px 2px 4px 0px, #50C878 0px 2px 16px 0px; */
+    box-shadow: #50C878 0px 25px 26px, #50C878 0px -12px 30px, #50C878 0px 4px 6px, #50C878 0px 12px 13px, #50C878 0px -3px 5px;
+}
+
+.loser
+{
+    /* box-shadow: #DC143C 0px 2px 4px 0px, #DC143C 0px 2px 16px 0px; */
+    box-shadow: #DC143C 0px 25px 26px, #DC143C 0px -12px 30px, #DC143C 0px 4px 6px, #DC143C 0px 12px 13px, #DC143C 0px -3px 5px;
+}
