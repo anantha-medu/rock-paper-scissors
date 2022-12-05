@@ -183,6 +183,20 @@ button
     font-family: 'Allerta Stencil';
 }
 
+#result-display
+{
+    font-size: 30px;
+    color: #f76c6c;
+}
+
+#final-result
+{
+    font-size: 40px;
+    color: #A8D0E6;
+    margin: 20px 0;
+}
+
+
 /* Footer */
 
 .footer
@@ -194,6 +208,7 @@ button
     background-color: #A8D0E6;
     margin: 0;
 }
+
 
 /* JAVASCRIPT STYLES */
 
