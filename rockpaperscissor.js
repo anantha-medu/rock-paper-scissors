@@ -127,6 +127,7 @@ function selectionDisplay(e)
         playerChoice.src=e.target.src;
         playerChoice.setAttribute("data-choice", choiceId);
         compChoiceDisplay.src = "img/question-mark.png";
+        playerChoice.classList.remove('unclicked');
     }
 
     playerChoice.parentElement.classList.remove('winner', 'loser');
@@ -204,6 +205,12 @@ function getPlayerChoice()
 {
     const playerChoice = document.getElementById("player-choice");
     if(playerChoice.getAttribute("data-choice") === null)
+    {
+        alert("Select a choice from the available options!!!");
+        return;
+    }
+
+    else if(playerChoice.classList.contains('unclicked'))
     {
         alert("Select a choice from the available options!!!");
         return;
@@ -297,6 +304,7 @@ function displayFinalResult()
 function game()
 {
     result = playRound();
+    playerChoice.classList.add('unclicked');
     updateScore(result);
     if(playerScore===5 || compScore === 5)
     {
